@@ -1,0 +1,150 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace текстовоеприключение
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            gameTitle();
+        }
+
+        public static void gameTitle()
+        {
+            Console.WriteLine("Добро Пожаловать в игру");
+            Console.WriteLine("Нажми 'Enter' чтобы продолжить");
+            Console.ReadLine();
+            Console.Clear();
+            first();
+        }
+
+        public static void first()
+        {
+            string choice;
+
+            Console.WriteLine("Ты Робин Гуд, ты украл 3 мешка золота, и раздал бедным.Тебе хотят убить");
+            Console.WriteLine("За твою голову назначена награда.Что ты сделаешь?");
+            Console.WriteLine("1.Сбежать");
+            Console.WriteLine("2.Заплатить 1 мешок золота за себя");
+            Console.WriteLine("3.Убить бандитов");
+            Console.Write("Choice: ");
+            choice = Console.ReadLine().ToLower();
+            Console.Clear();
+
+            switch (choice)
+            {
+                case "1":
+
+                    {
+                        Console.WriteLine("Поздравляю!");
+                        Console.WriteLine("Ты смог сбежать!");
+                        Console.WriteLine("Поднялся переполох и теперь за тобой погоня.Ты выбежал на дорогу Но она не такая как все дороги.");
+                        Console.WriteLine("Нажми 'Enter' чтобы продолжить!");
+                        Console.ReadLine();
+                        gameOver();
+                        break;
+
+
+                    }
+
+                case "2":
+
+                    {
+                        Console.WriteLine("Поздравляю! Ты пришел на сделку и теперь тебя чуть не убили, но ты сбежал.");
+                        Console.WriteLine("И теперь за тобой погоня.Тывыюежал на дорогку но теперь она какая-то странная.");
+                        Console.WriteLine("Нажми 'Enter' чтобы продолжить!");
+                        Console.ReadLine();
+                        second();
+                        break;
+                    }
+
+
+                case "3":
+
+                    {
+                        Console.WriteLine("Ты убил Бандитов но двое остались выжившими.Они собрали подмогу и теперь за тобой погоня.");
+                        Console.WriteLine("Ты выбежал на дорогу.Но она какая-то странная.");
+                        Console.WriteLine("Нажми 'Enter' чтобы продолжить!");
+                        Console.ReadLine();
+                        second();
+                        break;
+
+
+                    }
+
+
+            }
+        }
+        public static void second()
+        {
+            Random rnd = new Random();
+            string[] secOptions = { "Ты попал в будущее, ты в 2015 году" };
+            int randomNumber = rnd.Next(0, 3);
+            string secText = secOptions[randomNumber];
+
+            string secChoice;
+
+            Console.WriteLine(secText);
+            Console.WriteLine("останешься стоять на этом месте?");
+            Console.Write("Выбор: ");
+            secChoice = Console.ReadLine().ToLower();
+
+            if (secChoice == "Да" || secChoice == "да")
+            {
+                third();
+            }
+            else if (secChoice == "Нет" || secChoice == ("нет"))
+            {
+                Console.WriteLine("Тебя сбивает Audi Q5.");
+                Console.WriteLine("Нажмите 'Enter'чтобы продолжить!");
+                Console.ReadLine();
+                gameOver();
+            }
+        }
+
+
+        public static void third()
+        {
+            int age;
+            Console.WriteLine("Ты в будущем! ");
+            Console.WriteLine("Ты забываешь, сколько тебе лет попробуй вспомнить!");
+            Console.WriteLine("Сколько тебе лет?");
+            Console.WriteLine("Тебе:  (лет/год)");
+            int.TryParse(Console.ReadLine(), out age);
+
+            while (age < 100)
+            {
+                Console.WriteLine("Серьезно? ты выглядишь старше этого!");
+                Console.WriteLine("Сколько тебе лет на самом деле?");
+                Console.WriteLine("Тебе: (Лет/Год)");
+                int.TryParse(Console.ReadLine(), out age);
+            }
+            Console.WriteLine("Старик!");
+            youWin();
+        }
+    }
+
+    public static void gameOver()
+    {
+        Console.Clear();
+        Console.WriteLine("На твоих похоронах рассказывают про твою храбрость потом они понимают на чьих похоронах они присутвсвуют и забирают свои слова обратно");
+        Console.WriteLine("В следующий раз повезет больше!");
+        Console.ReadLine();
+        Console.Clear();
+
+    }
+
+    public static void youWin()
+    {
+        Console.Clear();
+        Console.WriteLine(" Ну все пока, ты прошел игру!");
+        Console.WriteLine("Отличная работа!! Ты выиграл!!");
+        Console.WriteLine("Нажми 'Enter' чтобы начать заново\nКОНЕЦ");
+        Console.ReadLine();
+        Console.Clear();
+    }
+}
