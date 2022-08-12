@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 
 namespace текстовоеприключение
-
 {
     class Program
-    {
-        static void Main(string[] args)
+    {    static void Main(string[] args)
         {
             gameTitle();
         }
-
         public static void gameTitle()
         {
             Console.WriteLine("Добро Пожаловать в игру");
@@ -25,7 +22,6 @@ namespace текстовоеприключение
         public static void first()
         {
             string choice;
-
             Console.WriteLine("Ты Робин Гуд, ты украл 3 мешка золота, и раздал бедным.Тебе хотят убить");
             Console.WriteLine("За твою голову назначена награда.Что ты сделаешь?");
             Console.WriteLine("1.Сбежать");
@@ -47,8 +43,6 @@ namespace текстовоеприключение
                         Console.ReadLine();
                         gameOver();
                         break;
-
-
                     }
 
                 case "2":
@@ -72,9 +66,7 @@ namespace текстовоеприключение
                         Console.ReadLine();
                         second();
                         break;
-
-
-                    }
+                     }
 
 
             }
@@ -85,9 +77,7 @@ namespace текстовоеприключение
             string[] secOptions = { "Ты попал в будущее, ты в 2015 году" };
             int randomNumber = rnd.Next(0, 3);
             string secText = secOptions[randomNumber];
-
             string secChoice;
-
             Console.WriteLine(secText);
             Console.WriteLine("останешься стоять на этом месте?");
             Console.Write("Выбор: ");
